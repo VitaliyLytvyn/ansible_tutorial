@@ -1,2 +1,2 @@
-ec2-18-195-38-130.eu-central-1.compute.amazonaws.com
-ec2-18-175-129-70.eu-west-2.compute.amazonaws.com
+ec2-18-195-38-130.eu-central-1.compute.amazonaws.com apache_package=apache2 php_package=libapache2-mod-php
+ec2-18-175-129-70.eu-west-2.compute.amazonaws.com apache_package=apache2 php_package=libapache2-mod-php
