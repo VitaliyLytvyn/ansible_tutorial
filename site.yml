@@ -4,19 +4,30 @@
   become: true
   pre_tasks:
 
-  - name: install updates (CentOS)
+  - name: update repo cache (CentOS)
     tags: always
     yum:
-      update_only: yes
       update_cache: yes
+    changed_when: false
     when: ansible_distribution == "CentOS"
 
-  - name: install updates (Ubuntu)
+  - name: update repo cache (Ubuntu)
     tags: always
     apt:
       update_cache: yes
-      upgrade: dist
+    changed_when: false
     when: ansible_distribution == "Ubuntu"
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: add ssh key for simone
+    tags: always
+    authorized_key:
+      user: simone
+      key: "{{ lookup('file', '~/.ssh/ansible.pub') }}"
+ 
 
 - hosts: workstations
   become: true
