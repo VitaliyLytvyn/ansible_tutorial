@@ -18,6 +18,42 @@
       upgrade: dist
     when: ansible_distribution == "Ubuntu"
 
+- hosts: workstations
+  become: true
+  tasks:
+
+  - name: install unzip
+    package:
+      name: unzip
+  
+  - name: install terraform
+    unarchive:
+      src: https://releases.hashicorp.com/terraform/1.5.0/terraform_1.5.0_linux_amd64.zip
+      dest: /usr/local/bin/
+      remote_src: yes
+      mode: '0755'
+      owner: root
+      group: root
+    
+
+  - name: install git package
+    tags: git
+    package:
+      name: git
+      state: latest
+
+  - name: install vim package
+    tags: vim
+    package:
+      name: vim
+      state: latest
+
+  - name: install wget package
+    tags: wget
+    package:
+      name: wget
+      state: latest
+
 - hosts: web_servers
   become: true
   tasks:
