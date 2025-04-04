@@ -21,6 +21,7 @@
 
 AllowUsers {{ ssh_users }}
 
+
 HostKey /etc/ssh/ssh_host_rsa_key
 #HostKey /etc/ssh/ssh_host_dsa_key
 HostKey /etc/ssh/ssh_host_ecdsa_key
@@ -78,8 +79,8 @@ ChallengeResponseAuthentication no
 #KerberosUseKuserok yes
 
 # GSSAPI options
-GSSAPIAuthentication yes
-GSSAPICleanupCredentials no
+#GSSAPIAuthentication no
+#GSSAPICleanupCredentials no
 #GSSAPIStrictAcceptorCheck yes
 GSSAPIKeyExchange no
 #GSSAPIEnablek5users no

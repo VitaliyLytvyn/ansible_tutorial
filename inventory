@@ -1,12 +1,12 @@
 [web_servers]
-ec2-18-195-38-130.eu-central-1.compute.amazonaws.com
+ec2-18-170-58-240.eu-west-2.compute.amazonaws.com
 192.168.56.10
 
 [db_servers]
 192.168.56.10
 
 [file_servers]
-ec2-18-175-129-70.eu-west-2.compute.amazonaws.com
+ec2-18-185-136-201.eu-central-1.compute.amazonaws.com
 
 [workstations]
 192.168.56.10
