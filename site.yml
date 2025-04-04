@@ -38,7 +38,17 @@
         - httpd
         - php
       state: latest
-    when: ansible_distribution == "CentOS"  
+    when: ansible_distribution == "CentOS"
+
+  - name: copy index.html file for site
+    tags: apache,apache2,httpd
+    copy:
+      src: default_site.html
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: '0644'
+   
     
 - hosts: db_servers
   become: true
@@ -61,7 +71,7 @@
 - hosts: file_servers
   become: true
   tasks:
-  
+
   - name: install samba package 
     tags: samba
     package:
